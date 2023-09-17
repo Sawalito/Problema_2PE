@@ -15,7 +15,7 @@ long sumFib(long n, long sum){
     if(Fib >4E6)
         return sum;
     else
-        if(Fib%2==1)
+        if(Fib%2==0)
             sum = sum + Fib;
             return sumFib(n+1,sum);
 }
