@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 using namespace std;
@@ -10,19 +9,17 @@ int mcd(int a, int b){
         return mcd(b,a%b);
 }
 
-int mcm(int n){
-    int p=2;
-    int k,i;
-    for(i=1;i<n;i++)
-        p = mcd(i,p);
-        k = (i*(i+1))/p;
-    return k;
+int mcm(int a){
+    if(a>1)
+        return (a*(a-1))/mcd(a,mcm(a-1));
+    else return a;
 }
+
 
 
 int main()
 {
     int MCM = mcm(5);
-    cout << MCD;
+    cout << MCM;
     return 0;
 }
