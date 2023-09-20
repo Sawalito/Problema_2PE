@@ -1,3 +1,4 @@
+
 #include <iostream>
 
 using namespace std;
@@ -9,9 +10,9 @@ int mcd(int a, int b){
         return mcd(b,a%b);
 }
 
-int mcm(int a){
+long mcm(int a){
     if(a>1)
-        return (a*(a-1))/mcd(a,mcm(a-1));
+        return (a*mcm(a-1))/mcd(a,mcm(a-1));
     else return a;
 }
 
@@ -19,7 +20,7 @@ int mcm(int a){
 
 int main()
 {
-    int MCM = mcm(5);
+    int MCM = mcm(20);
     cout << MCM;
     return 0;
 }
